@@ -48,7 +48,7 @@ GIT:
 2) my-app  <-> repository
 
     git init
-    git remote add origin https://github.com/Akhilg3m/my-app-apr26.git
+    git remote add origin xxxxxxxxxxxxx
 
     check: git remote -v
 
@@ -57,3 +57,5 @@ GIT:
     git add .                      //  changes -> stagedChanged
     git commit -m "xxxxxxxx"       //  stagedChange -> 0
     git push                       //  100%
+
+    ***) first time suggestion command with -f
