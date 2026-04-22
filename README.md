@@ -1,27 +1,59 @@
-# MyApp
+android -> playstore -> facebookApp
+nodejs -> npm -> angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+SetUp:
+------
+1) Download and install nodejs
 
-## Development server
+    check: node -v
+           npm -v
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+2) Install angular
 
-## Code scaffolding
+    npm install -g @angular/cli@15
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    check: ng version
 
-## Build
+3) create new app
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    cd desktop
+    ng new my-app
 
-## Running unit tests
+4) start the server
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ng serve
 
-## Running end-to-end tests
+    check: in browser localhost:4200
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**) allow scripts exection form powershell
+    1) open powershell as administrator
+    2) run command:  set-executionPolicy unrestricted
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Angular: Angular is a framework to build single page application.
+
+    Framework: combinaiton of langulages+libraries
+        HTML, CSS, JS, TS, RXJS
+
+GIT:
+====
+
+1) laptopGitSoftware <-> github site
+
+    git config --global user.name  xxxxxxxxxxxxxx
+    git config --global user.email xxxxxxxxxxxxxx
+
+    check: git config --list
+
+2) my-app  <-> repository
+
+    git init
+    git remote add origin https://github.com/Akhilg3m/my-app-apr26.git
+
+    check: git remote -v
+
+3) code sync
+
+    git add .                      //  changes -> stagedChanged
+    git commit -m "xxxxxxxx"       //  stagedChange -> 0
+    git push                       //  100%
