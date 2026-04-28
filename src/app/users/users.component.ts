@@ -8,6 +8,8 @@ import { BrowserModule } from "@angular/platform-browser";
 })
 export class UsersComponent {
 
+  // allUsers:any = take data from URL
+
   allUsers: any = [
     { id: 1, name: "Akhil", age: 28, salary: 75000, department: "Frontend", isActive: true, rating: 4.5 },
     { id: 2, name: "Ravi", age: 32, salary: 90000, department: "Backend", isActive: false, rating: 4.2 },
@@ -77,3 +79,8 @@ export class UsersComponent {
   }
 
 }
+
+
+
+
+
