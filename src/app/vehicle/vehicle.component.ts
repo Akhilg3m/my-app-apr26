@@ -23,4 +23,16 @@ export class VehicleComponent {
 
   }
 
+  deleteVehicle(id:string){
+    this.vehicleService.deleteVehicle(id).subscribe(
+      (data:any)=>{
+        alert("deleted succesfully!!!!");
+        location.reload();
+      },
+      (err:any)=>{
+        alert("delete failed!");
+      }
+    )
+  }
+
 }

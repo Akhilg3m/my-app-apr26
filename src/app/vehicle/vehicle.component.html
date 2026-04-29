@@ -10,9 +10,10 @@
             <th>Fuel</th>
             <th>Color</th>
             <th>Image</th>
-            <th>Cost</th>
-            <th>Tyres</th>
+            <!-- <th>Cost</th>
+            <th>Tyres</th> -->
             <th>Id</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -26,22 +27,12 @@
             <td> 
                 <img [src]="vehicle.image" alt="" width="100px" height="100px">
             </td>
-            <td>{{vehicle.cost}}</td>
-            <td>{{vehicle.tyres}}</td>
+            <!-- <td>{{vehicle.cost}}</td>
+            <td>{{vehicle.tyres}}</td> -->
             <td>{{vehicle.id}}</td>
+            <td>
+                <button class="red-button" (click)="deleteVehicle(vehicle.id)">delete</button>
+            </td>
         </tr>
     </tbody>
 </table>
-<!-- 
- {
-    "Vehicle": "Royal Enfield Hunter 350",
-    "manufacturer": "india s comapny",
-    "model": "Hunter 350",
-    "type": null,
-    "fuel": "petrol",
-    "color": "black",
-    "image": "https://imgd.aeplcdn.com/1056x594/n/o1vq5fb_1830359.jpg?q=80",
-    "cost": 137648,
-    "tyres": 2,
-    "id": "30"
-  }, -->
