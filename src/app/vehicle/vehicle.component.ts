@@ -24,11 +24,25 @@ export class VehicleComponent {
   }
 
   term:string = "";
-
   filterVehicles(){
     this.vehicleService.getFilteredVehicles(this.term).subscribe(
       (data:any)=>{
         this.vehicles = data;
+      },
+      (err:any)=>{
+        alert("internal server error");
+      }
+    )
+  }
+
+  column:string = "";
+  order:string = "";
+
+  sortVehicles(){
+    this.vehicleService
+    .getSortVehicles(this.column, this.order).subscribe(
+      (data:any)=>{
+       this.vehicles = data;
       },
       (err:any)=>{
         alert("internal server error");

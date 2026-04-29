@@ -1,6 +1,21 @@
 <p>vehicle works!</p>
 <input type="text" placeholder="search" [(ngModel)]="term">
 <button class="blue-button" (click)="filterVehicles()">search</button>
+
+<label for="">Column:</label>
+<select [(ngModel)]="column">
+    <option value="color">Color</option>
+    <option value="fuel">Fuel</option>
+    <option value="model">Model</option>
+</select>
+
+<label for="">Order:</label>
+<select [(ngModel)]="order">
+    <option value="asc">Ascending</option>
+    <option value="desc">Descending</option>
+</select>
+<button class="blue-button" (click)="sortVehicles()">sort</button>
+
 <table>
     <thead>
         <tr>
