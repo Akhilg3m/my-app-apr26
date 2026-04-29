@@ -52,3 +52,11 @@
         </tr>
     </tbody>
 </table>
+
+
+<button 
+    class="yellow-button" 
+    (click)="pageVehicles(i+1)"
+    *ngFor="let page of [].constructor(10); let i=index"
+>
+{{i+1}}</button>
