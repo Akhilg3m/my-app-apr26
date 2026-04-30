@@ -8,66 +8,78 @@ import { VehicleService } from '../vehicle.service';
 })
 export class VehicleComponent {
 
-  vehicles:any = [];
+  vehicles: any = [];
 
-  constructor(private vehicleService:VehicleService){
+  constructor(private vehicleService: VehicleService) {
 
     vehicleService.getVehicles().subscribe(
-      (data:any)=>{
+      (data: any) => {
         this.vehicles = data;
       },
-      (err:any)=>{
+      (err: any) => {
         alert("Internal server error");
       }
     )
 
   }
 
-  term:string = "";
-  filterVehicles(){
+  term: string = "";
+  filterVehicles() {
     this.vehicleService.getFilteredVehicles(this.term).subscribe(
-      (data:any)=>{
+      (data: any) => {
         this.vehicles = data;
       },
-      (err:any)=>{
+      (err: any) => {
         alert("internal server error");
       }
     )
   }
 
-  column:string = "";
-  order:string = "";
+  column: string = "";
+  order: string = "";
 
-  sortVehicles(){
+  sortVehicles() {
     this.vehicleService
-    .getSortVehicles(this.column, this.order).subscribe(
-      (data:any)=>{
-       this.vehicles = data;
-      },
-      (err:any)=>{
-        alert("internal server error");
-      }
-    )
+      .getSortVehicles(this.column, this.order).subscribe(
+        (data: any) => {
+          this.vehicles = data;
+        },
+        (err: any) => {
+          alert("internal server error");
+        }
+      )
   }
 
-  pageVehicles(page:number){
+  pageVehicles(page: number) {
     this.vehicleService.getPagedVehicles(page).subscribe(
-      (data:any)=>{
-       this.vehicles = data;
+      (data: any) => {
+        this.vehicles = data;
       },
-      (err:any)=>{
+      (err: any) => {
         alert("internal server error");
       }
     )
   }
 
-  deleteVehicle(id:string){
+  getVehiclesWithParams(page:number=1) {
+    this.vehicleService.getVehiclesWithParams(this.term, this.column, this.order, page).subscribe(
+      (data: any) => {
+        this.vehicles = data;
+      },
+      (err: any) => {
+        alert("internal server error");
+      }
+    )
+
+  }
+
+  deleteVehicle(id: string) {
     this.vehicleService.deleteVehicle(id).subscribe(
-      (data:any)=>{
+      (data: any) => {
         alert("deleted succesfully!!!!");
         location.reload();
       },
-      (err:any)=>{
+      (err: any) => {
         alert("delete failed!");
       }
     )
