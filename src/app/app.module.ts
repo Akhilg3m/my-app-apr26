@@ -9,12 +9,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { UsersComponent } from './users/users.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +29,15 @@ import { HttpClientModule } from '@angular/common/http';
     DirectivesComponent,
     PipesComponent,
     UsersComponent,
-    VehicleComponent
+    VehicleComponent,
+    CreateVehicleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
