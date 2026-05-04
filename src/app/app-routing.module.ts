@@ -12,6 +12,7 @@ import { UsersComponent } from './users/users.component';
 import { VehicleService } from './vehicle.service';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
     {path:'users', component:UsersComponent},
     {path:'vehicles', component:VehicleComponent},
     {path:'create-vehicle', component:CreateVehicleComponent},
+    {path:'vehicle-details/:id', component:VehicleDetailsComponent},
 
   ]},
   {path:'', component:LoginComponent},
