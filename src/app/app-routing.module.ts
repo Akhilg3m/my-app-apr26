@@ -26,7 +26,7 @@ const routes: Routes = [
     {path:'vehicles', component:VehicleComponent},
     {path:'create-vehicle', component:CreateVehicleComponent},
     {path:'vehicle-details/:id', component:VehicleDetailsComponent},
-
+    {path:'edit-vehicle/:id', component:CreateVehicleComponent}
   ]},
   {path:'', component:LoginComponent},
   {path:'**',component:PageNotFoundComponent}
