@@ -68,8 +68,6 @@ API INTEGRATION:
 
 1) import HTTPClient module
 
-
-
 2) Inject HttpClient service in VehicleService
     get, post, put, delete
 
@@ -79,6 +77,8 @@ API INTEGRATION:
    and subscribe to listen the data
 
 5) loop in html to display the data.
+
+
 
 
 
@@ -97,4 +97,3 @@ API INTEGRATION:
 7)  put     put(url/id,data)                 update
 
 8)  delete  delete(url/id)                   delete
-

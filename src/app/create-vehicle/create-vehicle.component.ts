@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { VehicleService } from '../vehicle.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Vehicle } from '../vehicle';
 
 @Component({
   selector: 'app-create-vehicle',
@@ -22,10 +23,10 @@ export class CreateVehicleComponent {
   id:string="";
   constructor(private vehicleService: VehicleService, private activatedRoute: ActivatedRoute) {
     activatedRoute.params.subscribe(
-      (data: any) => {
-        this.id = data.id;
-        vehicleService.getVehicle(data.id).subscribe(
-          (data: any) => {
+      (data: Params) => {
+        this.id = data['id'];
+        vehicleService.getVehicle(data['id']).subscribe(
+          (data: Vehicle) => {
             this.vehicleForm.patchValue(data);
           }
         )
@@ -38,11 +39,11 @@ export class CreateVehicleComponent {
     if (this.id) {
       // edit
       this.vehicleService.editVehicle(this.id,this.vehicleForm.value).subscribe(
-        (data: any) => {
+        (data: Vehicle) => {
           alert("edited sucessfullyyy!!!!!");
           this.vehicleForm.reset();
         },
-        (err: any) => {
+        (err: Error) => {
           alert("edit falied");
         }
       )
@@ -50,11 +51,11 @@ export class CreateVehicleComponent {
     else {
       // create
       this.vehicleService.createVehicle(this.vehicleForm.value).subscribe(
-        (data: any) => {
+        (data: Vehicle) => {
           alert("created sucessfullyyy!!!!!");
           this.vehicleForm.reset();
         },
-        (err: any) => {
+        (err: Error) => {
           alert("creation falied");
         }
       )
