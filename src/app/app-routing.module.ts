@@ -13,10 +13,11 @@ import { VehicleService } from './vehicle.service';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
-  {path:'dashboard', component: DashboardComponent, children:[
+  {path:'dashboard', canActivate:[AuthGuard], component: DashboardComponent, children:[
     {path:'home', component:HomeComponent},
     {path:'welcome', component:WelcomeComponent},
     {path:'data-binding', component: DataBindingComponent},
