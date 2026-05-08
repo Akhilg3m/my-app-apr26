@@ -21,6 +21,11 @@
 
     <label for="">Email:</label>
     <input type="email" formControlName="email">
+    <div *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid">
+        <p *ngIf="userForm.get('email')?.errors?.['required']">email is required</p>
+        <p *ngIf="userForm.get('email')?.errors?.['email']">email invalid format. </p>
+        <p *ngIf="userForm.get('email')?.errors?.['capgeminiMail']">Only capgemin maiils allowed.</p>
+    </div>
     <br>
 
     <label for="">Password:</label>
