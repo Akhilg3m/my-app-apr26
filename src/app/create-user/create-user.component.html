@@ -4,6 +4,11 @@
 
     <label for="">Name:</label>
     <input type="text" formControlName="name">
+    <div *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid">
+        <p *ngIf="userForm.get('name')?.errors?.['required']">Name is required</p>
+        <p *ngIf="userForm.get('name')?.errors?.['minlength']">Min 3 chars </p>
+        <p *ngIf="userForm.get('name')?.errors?.['maxlength']">Min 10 chars </p>
+    </div>
     <br>
 
     <label for="">Age:</label>
@@ -16,12 +21,28 @@
 
     <label for="">Email:</label>
     <input type="email" formControlName="email">
+    <div *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid">
+        <p *ngIf="userForm.get('email')?.errors?.['required']">email is required</p>
+        <p *ngIf="userForm.get('email')?.errors?.['email']">email invalid format. </p>
+        <p *ngIf="userForm.get('email')?.errors?.['capgeminiMail']">Only capgemin maiils allowed.</p>
+    </div>
+    <br>
+
+    <label for="">Password:</label>
+    <input type="text" formControlName="password">
+     <div *ngIf="userForm.get('password')?.touched && userForm.get('password')?.invalid">
+        <p *ngIf="userForm.get('password')?.errors?.['required']">password is required</p>
+        <p *ngIf="userForm.get('password')?.errors?.['pattern']">At least one C,S,N,Spe and min 8 len </p>
+    </div>
     <br>
 
     <div formGroupName="address">
 
         <label for="">City:</label>
         <input type="text" formControlName="city">
+        <div *ngIf="userForm.get('address')?.get('city')?.touched && userForm.get('address')?.get('city')?.invalid">
+            <p *ngIf="userForm.get('address')?.get('city')?.errors?.['required']">Name is required</p>
+        </div>
         <br>
 
         <label for="">Pin:</label>
@@ -41,6 +62,11 @@
 
                 <label for="">number:</label>
                 <input type="number" formControlName="number">
+                <div
+                    *ngIf="cardsFormArray.controls[i]?.get('number')?.touched && cardsFormArray.controls[i]?.get('number')?.invalid">
+                    <p *ngIf="cardsFormArray.controls[i]?.get('number')?.errors?.['required']">Card number is required
+                    </p>
+                </div>
                 <br>
 
                 <label for="">Name:</label>
@@ -60,7 +86,47 @@
 
     </div>
 
+    <label for="">Type:</label>
+    <input type="radio" name="type" value="dayScholor" formControlName="type">
+    <label for="">Day Scholor</label>
+    <input type="radio" name="type" value="residential" formControlName="type">
+    <label for="">Residentail</label>
+    <br>
 
+    <div *ngIf="userForm.get('type')?.value == 'dayScholor'">
+        <label for="">Bes Fee:</label>
+        <input type="number" formControlName="busFee">
+        <br>
+    </div>
+
+    <div *ngIf="userForm.get('type')?.value == 'residential'">
+        <label for="">Hostel Fee:</label>
+        <input type="number" formControlName="hostelFee">
+        <br>
+    </div>
     <input type="submit">
 
 </form>
+
+
+
+<!-- 
+
+
+  <div *ngIf="xxxxxxxxxxxxxxxxxx?.touched && xxxxxxxxxxxxxxxxxx?.invalid">
+    <p *ngIf="xxxxxxxxxxxxxxxxxx?.errors?.['required']">Name is required</p>
+    <p *ngIf="xxxxxxxxxxxxxxxxxx?.errors?.['minlength']">Min 3 chars </p>
+    <p *ngIf="xxxxxxxxxxxxxxxxxx?.errors?.['maxlength']">Min 10 chars </p>
+  </div>
+
+
+  Control:
+
+  FormGroup:        userForm.get('name')
+
+  NestedFormGroup:  userForm.get('address')?get('city')
+
+  FormAraay:        cardsFormArray.controls[i]?.get('cvv')
+
+-->
+
