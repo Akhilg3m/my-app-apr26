@@ -61,6 +61,29 @@ GIT:
     ***) first time suggestion command with -f
 
 
+4) with branches
+
+    1) create branch in github
+    
+    2) get branch in local and shift to that branch
+
+            git fetch
+            git checkout XXXXX
+
+            check: git branch
+
+    3) after code complete:
+
+            git add .
+            git commit -m "xxxxxxx"
+            git pull origin master
+            git push
+        
+    4) raise pull request, add merge.
+
+
+
+
 API INTEGRATION:
 ================
 
