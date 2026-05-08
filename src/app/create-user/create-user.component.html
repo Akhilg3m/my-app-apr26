@@ -4,6 +4,11 @@
 
     <label for="">Name:</label>
     <input type="text" formControlName="name">
+    <div *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid">
+        <p *ngIf="userForm.get('name')?.errors?.['required']">Name is required</p>
+        <p *ngIf="userForm.get('name')?.errors?.['minlength']">Min 3 chars </p>
+        <p *ngIf="userForm.get('name')?.errors?.['maxlength']">Min 10 chars </p>
+    </div>
     <br>
 
     <label for="">Age:</label>
@@ -22,6 +27,9 @@
 
         <label for="">City:</label>
         <input type="text" formControlName="city">
+        <div *ngIf="userForm.get('address')?.get('city')?.touched && userForm.get('address')?.get('city')?.invalid">
+            <p *ngIf="userForm.get('address')?.get('city')?.errors?.['required']">Name is required</p>
+        </div>
         <br>
 
         <label for="">Pin:</label>
@@ -41,6 +49,11 @@
 
                 <label for="">number:</label>
                 <input type="number" formControlName="number">
+                <div
+                    *ngIf="cardsFormArray.controls[i]?.get('number')?.touched && cardsFormArray.controls[i]?.get('number')?.invalid">
+                    <p *ngIf="cardsFormArray.controls[i]?.get('number')?.errors?.['required']">Card number is required
+                    </p>
+                </div>
                 <br>
 
                 <label for="">Name:</label>
@@ -81,3 +94,26 @@
     <input type="submit">
 
 </form>
+
+
+
+<!-- 
+
+
+  <div *ngIf="xxxxxxxxxxxxxxxxxx?.touched && xxxxxxxxxxxxxxxxxx?.invalid">
+    <p *ngIf="xxxxxxxxxxxxxxxxxx?.errors?.['required']">Name is required</p>
+    <p *ngIf="xxxxxxxxxxxxxxxxxx?.errors?.['minlength']">Min 3 chars </p>
+    <p *ngIf="xxxxxxxxxxxxxxxxxx?.errors?.['maxlength']">Min 10 chars </p>
+  </div>
+
+
+  Control:
+
+  FormGroup:        userForm.get('name')
+
+  NestedFormGroup:  userForm.get('address')?get('city')
+
+  FormAraay:        cardsFormArray.controls[i]?.get('cvv')
+
+-->
+
