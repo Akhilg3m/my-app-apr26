@@ -20,6 +20,7 @@ import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.compo
 import { CreateUserComponent } from './create-user/create-user.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ChildComponent } from './child/child.component';
     VehicleDetailsComponent,
     CreateUserComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
