@@ -23,7 +23,7 @@ export class LoginComponent {
       (data:any)=>{
         alert("login sucess");
         // go to dashboard
-        this.router.navigateByUrl("www.facebook.com");
+        this.router.navigateByUrl("/dashboard");
         // store token
         localStorage.setItem("token", data.access_token);
       },

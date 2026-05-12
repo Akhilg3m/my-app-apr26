@@ -133,3 +133,16 @@ API INTEGRATION:
 5) Form Validations
 
 6) Custom Validators
+
+---------------------------------------------------
+
+1) sibling, module com
+2) customs, interceptor, authorization
+3) architecure, cli theory, performace optimization others
+4) scss, bootstrap, material, architecture, unittesting
+
+Project
+
+New features . . . . 
+
+----------------------------------------------------
