@@ -55,7 +55,7 @@ import { ContactUsModule } from './contact-us/contact-us.module';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ContactUsModule
+    ContactUsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
