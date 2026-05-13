@@ -20,6 +20,7 @@ export class CreateUserComponent {
       pin: new FormControl("", [Validators.required, Validators.min(100000), Validators.max(999999)]),
     }),
     cards: new FormArray([]),
+    tags: new FormArray([]),
     type: new FormControl(),
     busFee: new FormControl("", [Validators.required, Validators.min(0)]),
     hostelFee: new FormControl("", [Validators.required, Validators.min(0)]),
@@ -27,6 +28,9 @@ export class CreateUserComponent {
 
   get cardsFormArray(){
     return this.userForm.get('cards') as FormArray;
+  }
+  get tagsFormArray(){
+    return this.userForm.get('tags') as FormArray;
   }
 
   addCard(){
@@ -36,6 +40,12 @@ export class CreateUserComponent {
         name: new FormControl(),
         cvv: new FormControl(),
       })
+    )
+  }
+
+  addTag(){
+    this.tagsFormArray.push(
+      new FormControl()
     )
   }
 

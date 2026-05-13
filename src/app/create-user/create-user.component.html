@@ -50,6 +50,18 @@
         <br>
 
     </div>
+    <label for="">Tags:</label>
+    <button type="button" (click)="addTag()">add tag</button>
+
+    <div formArrayName="tags">
+        <div *ngFor="let tag of tagsFormArray.controls; let i=index">
+
+            <label for="">Tag:</label>
+            <input type="text" formControlName="{{i}}">
+
+        </div>
+    </div>
+
 
     <label for="">Cards:</label>
     <button type="button" (click)="addCard()">add card</button>
