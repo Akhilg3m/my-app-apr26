@@ -25,6 +25,7 @@ import { ItemsComponent } from './items/items.component';
 import { NavComponent } from './nav/nav.component';
 import { CartComponent } from './cart/cart.component';
 import { ContactUsModule } from './contact-us/contact-us.module';
+import { PricePipe } from './price.pipe';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ContactUsModule } from './contact-us/contact-us.module';
     RatingComponent,
     ItemsComponent,
     NavComponent,
-    CartComponent
+    CartComponent,
+    PricePipe
   ],
   imports: [
     BrowserModule,
