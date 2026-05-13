@@ -26,6 +26,8 @@ export class LoginComponent {
         this.router.navigateByUrl("/dashboard");
         // store token
         localStorage.setItem("token", data.access_token);
+        // store role
+        localStorage.setItem("role", "user");
       },
       (err:any)=>{
         alert("invalid credentials");

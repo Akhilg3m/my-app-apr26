@@ -10,6 +10,7 @@ import { Vehicle } from '../vehicle';
 export class VehicleComponent {
 
   vehicles: Vehicle[] = [];
+  role:string = String(localStorage.getItem("role"));
 
   constructor(private vehicleService: VehicleService) {
 
