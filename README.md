@@ -138,14 +138,14 @@ API INTEGRATION:
 
 1) sibling, module communication
 2) customs, interceptor, authorization
-    - component - D
-    - directive - D
-    - pipe      - D
+    - component - D 
+    - directive - D u
+    - pipe      - D u
     - service   - D
     - module    - D
     - data type - D
-    - api       -  
-    - validator - D
+    - api       - D
+    - validator - D u
 
 3) architecure, cli theory, performace optimization others
 4) scss, bootstrap, material, architecture, unittesting
